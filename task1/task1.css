@@ -1,0 +1,37 @@
+body{
+    background-color: rgb(243, 223, 223);
+}
+h1:first-of-type{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(115, 0, 255);
+    text-decoration: underline;
+}
+h1:nth-of-type(2){
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(167, 97, 253);
+    text-decoration: underline;
+}
+img{
+    height:400px;
+    width:300px;
+    margin:20px auto;
+    display: block;
+}
+p{
+    font-size: 19px;
+}
+h2{
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(167, 97, 253);
+    text-decoration: underline;
+    text-align: center;
+}
+.nav{
+    text-align: center;
+    margin-top: 20px;
+}
+.nav a{
+    font-size: 20px;
+}
+

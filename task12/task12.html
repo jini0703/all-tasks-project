@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Events Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            transition: background-color 0.6s ease;
+        }
+
+        .dashboard-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 28px;
+            transition: color 0.3s ease;
+            cursor: default;
+        }
+
+        .section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        p {
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.1s, filter 0.2s;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            filter: brightness(1.1);
+        }
+        
+        button:active {
+            transform: scale(0.97);
+        }
+
+        #confirmBtn { background-color: var(--success); }
+        #alertBtn { background-color: var(--warning); }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--primary);
+        }
+
+        .output-box {
+            margin-top: 12px;
+            padding: 12px;
+            background-color: #e0e7ff;
+            color: var(--primary-hover);
+            border-radius: 8px;
+            font-style: italic;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-card">
+        <h1 id="hoverTitle">Interactive Dashboard</h1>
+        <p style="color: #64748b; margin-top: -15px;">Hover over the title above!</p>
+
+        <div class="section">
+            <p id="targetText">This is a standard paragraph. Click the button below to transform its content.</p>
+            <button id="textBtn">Transform Text</button>
+        </div>
+
+        <div class="section">
+            <label for="liveInput" style="font-weight: 600; display: block; margin-bottom: 8px;">Live Text Mirroring:</label>
+            <input type="text" id="liveInput" placeholder="Start typing here...">
+            <div id="liveOutput" class="output-box">Your keystrokes will appear here...</div>
+        </div>
+
+        <div class="section" style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <button id="confirmBtn">Change Theme (Confirm)</button>
+            <button id="alertBtn">Show Alert</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('textBtn').onclick = function() {
+            const paragraph = document.getElementById('targetText');
+            paragraph.innerText = "✨ Magic! The text was successfully updated using the onclick event.";
+            paragraph.style.color = "var(--primary)";
+            paragraph.style.fontWeight = "bold";
+        };
+
+        const title = document.getElementById('hoverTitle');
+        title.onmouseover = function() {
+            this.style.color = "#ec4899";
+        };
+        title.onmouseout = function() {
+            this.style.color = "var(--text-main)";
+        };
+
+        document.getElementById('liveInput').onkeyup = function(event) {
+            const outputBox = document.getElementById('liveOutput');
+            outputBox.innerText = event.target.value || "Your keystrokes will appear here...";
+        };
+
+        document.getElementById('confirmBtn').onclick = function() {
+            const userConsented = confirm("Do you want to apply a random dark mode theme to the background?");
+            
+            if (userConsented) {
+                const randomDarkColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                document.body.style.backgroundColor = randomDarkColor;
+            }
+        };
+
+        document.getElementById('alertBtn').onclick = function() {
+            alert("🚀 System Check: All JavaScript DOM events are firing successfully!");
+        };
+    </script>
+
+</body>
+</html>

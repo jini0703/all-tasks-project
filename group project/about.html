@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - NestQuest</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+        .inner-glass { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 1.5rem; text-align: left; transition: 0.3s; }
+        .inner-glass:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--neon-purple); }
+        .about-list { list-style: none; padding: 0; margin: 0; line-height: 2.2; }
+        .about-list li::before { content: "•"; color: var(--neon-pink); font-weight: bold; display: inline-block; width: 1em; margin-left: 0.5em; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav class="glass-card" style="padding: 1rem;">
+            <span class="nav-brand">🏠 <span class="nav-brand-text">NestQuest</span></span>
+            
+            <div class="nav-links" style="display: flex; align-items: center;">
+                <a href="index.html">Profile</a>
+                <a href="match.html">Swipe</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="about.html" class="active">About</a>
+                <a href="#" onclick="logout()">Logout</a>
+                <button id="themeToggle" class="theme-btn">🔮</button>
+                <a href="index.html" class="nav-avatar" id="navAvatar">👤</a>
+            </div>
+        </nav>
+
+        <div class="glass-card" style="padding: 3rem 2rem; text-align: center;">
+            <h1 style="color: var(--neon-pink); font-size: 2.8rem; text-shadow: 0 0 20px rgba(255, 71, 126, 0.5);">About NestQuest</h1>
+            <p style="font-size: 1.15rem; line-height: 1.8; max-width: 700px; margin: 1.5rem auto 3rem auto;">
+                <strong>NestQuest</strong> is a smart roommate compatibility finder. 
+                It helps you find the perfect roommate based on shared lifestyles 
+                to ensure a peaceful living environment.
+            </p>
+
+            <div class="about-grid">
+                <div class="inner-glass">
+                    <h3 style="color: var(--neon-purple); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">🚀 How It Works</h3>
+                    <ul class="about-list">
+                        <li>Create your personal profile</li>
+                        <li>Define your roommate criteria</li>
+                        <li>Swipe through potential matches</li>
+                        <li>Connect via automated email</li>
+                    </ul>
+                </div>
+                <div class="inner-glass">
+                    <h3 style="color: var(--neon-purple); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">⚙️ The Algorithm</h3>
+                    <p style="margin-bottom: 10px; font-size: 0.9rem; opacity: 0.8;">Each match gives 25% compatibility:</p>
+                    <ul class="about-list" style="line-height: 1.8;">
+                        <li>🌙 Sleep Schedules</li>
+                        <li>🧹 Cleanliness Standards</li>
+                        <li>📚 Study Environment</li>
+                        <li>🤝 Social Energy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem; border-top: 1px solid var(--glass-border); padding-top: 2.5rem;">
+                <h3 style="color: var(--neon-pink); margin-bottom: 1.5rem; letter-spacing: 2px;">DEVELOPMENT TEAM</h3>
+                <div style="background: rgba(0, 0, 0, 0.4); padding: 2rem; border-radius: 20px; display: inline-block; text-align: left; border: 1px dashed var(--neon-pink); box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);">
+                    <p style="font-size: 1.2rem; margin: 0; font-weight: 500;">👩‍💻 <strong>Anjini Pandey</strong> &nbsp;|&nbsp; 24BCE0714</p>
+                    <p style="font-size: 1.2rem; margin-top: 15px; font-weight: 500;">👨‍💻 <strong>Yash Pradhan</strong> &nbsp;|&nbsp; 24BCE0702</p>
+                    <p style="font-size: 0.9rem; margin-top: 20px; color: var(--neon-purple); text-align: center; font-style: italic; opacity: 0.8;">School of Computer Science & Engineering, VIT Vellore</p>
+                </div>
+            </div>
+
+        </div> 
+    </div> 
+    
+    <script src="script.js"></script>
+</body>
+</html>

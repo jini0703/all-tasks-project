@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url(https://media.istockphoto.com/id/185643726/photo/digital-fractal-realms.jpg?s=612x612&w=0&k=20&c=17hWjXha21q7YI6Y9BEBI7H69Ni_0m44BFjsRd86aKU=);
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    color: #FFFFFF;
+}
+p{
+    font-size: 20px;
+    color: #E6FF00;
+    font-weight: bold;
+}

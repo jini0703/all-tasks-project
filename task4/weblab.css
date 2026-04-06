@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url(https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg?semt=ais_hybrid&w=740&q=80);
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    color: #FFFFFF;
+}
+p{
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+}

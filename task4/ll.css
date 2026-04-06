@@ -1,0 +1,83 @@
+body {
+    font-family: "Arial", sans-serif;
+    font-size: 11px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #444;
+    min-width: 1200px;
+}
+
+th, td {
+    border: 1px solid #6c8fa8;
+    text-align: center;
+    padding: 4px;
+    color: #333;
+}
+
+.header-blue {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    color: #333;
+}
+
+.col-lunch {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.header-lunch {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.class-cell {
+    background-color: #fa7082;
+    color: #000;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.empty-cell {
+    background-color: #ffffff;
+    color: #555;
+}
+
+.row-header {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.time-row th {
+    font-weight: normal;
+}
+
+.class-cell a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.class-cell a:link {
+    color: #000000;
+}
+
+.class-cell a:visited {
+    color: #551a8b;
+    text-decoration: line-through;
+}
+
+.class-cell a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    background:
+        linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+        url(https://www.naukri.com/cloudgateway-fastforward/ff-content-services/v0/unauth/cms/photo?id=9105f8569845c7885ca3fee7856ee612f6cca7145031741ad3cabeecea02fcf20923ec408ebbca144c03f8807c8f3381eaaa39026189449c239f6ca0eeb40ee5cca07e92d6f1e66abcb095a3d8659f2d&postTypeId=c4eff10da33c562d3e88af8f60fcf6cecdf3e35370f49177&source=ff);
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+    color: #000000;
+}
+
+p{
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+}

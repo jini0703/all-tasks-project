@@ -1,0 +1,137 @@
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+body{
+background:linear-gradient(135deg,#667eea,#764ba2);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+.nav-container{
+text-align:center;
+background:white;
+padding:50px 60px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.25);
+}
+.nav-text{
+margin:20px 0;
+color:#666;
+}
+.nav-btn{
+display:inline-block;
+margin:10px 15px;
+padding:14px 32px;
+background:#007BFF;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+transition:background 0.3s ease;
+}
+.nav-btn:hover{
+background:#0056b3;
+}
+.form-wrapper{
+background:white;
+width:100%;
+max-width:550px;
+padding:40px 50px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.25);
+}
+h2{
+text-align:center;
+margin-bottom:25px;
+color:#333;
+}
+.form-group{
+margin-bottom:15px;
+}
+label{
+display:block;
+margin-bottom:6px;
+color:#555;
+font-size:15px;
+}
+input,select{
+width:100%;
+padding:10px;
+border:1px solid #ddd;
+border-radius:4px;
+font-size:14px;
+}
+input:focus,select:focus{
+border-color:#007BFF;
+outline:none;
+}
+.radio-group{
+display:flex;
+gap:30px;
+margin-top:8px;
+}
+.radio-group label{
+display:flex;
+align-items:center;
+gap:8px;
+}
+.checkbox-group{
+display:flex;
+align-items:center;
+gap:10px;
+margin:20px 0;
+}
+input[type="radio"],input[type="checkbox"]{
+width:auto;
+}
+.btn-submit{
+width:100%;
+padding:14px;
+background:#28a745;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+.btn-submit:hover{
+background:#218838;
+}
+.login-container{
+display:flex;
+width:800px;
+height:500px;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.25);
+border-radius:12px;
+overflow:hidden;
+}
+.login-left{
+flex:1;
+background:url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+}
+.login-right{
+flex:1;
+padding:50px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.login-btn{
+background:#6495ED;
+}
+.back-link{
+display:block;
+margin-top:15px;
+text-align:center;
+color:#0066ff;
+text-decoration:none;
+font-weight:500;
+}
+.back-link:hover{
+text-decoration:underline;
+}

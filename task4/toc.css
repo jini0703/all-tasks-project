@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url(https://www.cs.queensu.ca/images/research/theory-of-computation.jpg);
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    color: #FFFFFF;
+}
+p{
+    font-size: 20px;
+    color: #E6FF00;
+    font-weight: bold;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - NestQuest</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav class="glass-card" style="padding: 1rem;">
+            <span class="nav-brand">🏠 <span class="nav-brand-text">NestQuest</span></span>
+            
+            <div class="nav-links" style="display: flex; align-items: center;">
+                <a href="index.html" class="active">Profile</a>
+                <a href="match.html">Swipe</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="about.html">About</a> 
+                <a href="#" onclick="logout()">Logout</a>
+        
+                <button id="themeToggle" class="theme-btn">🔮</button>
+                <a href="index.html" class="nav-avatar" id="navAvatar" title="Edit Profile">👤</a>
+            </div>
+        </nav>
+
+        <div class="glass-card">
+            <form id="profileForm">
+                
+                <div id="step1">
+                    <label style="font-weight: bold; color: var(--text-main); font-size: 1.2rem; display: block; text-align: center; margin-bottom: 1rem;">Pick your Avatar</label>
+                    <div class="avatar-grid">
+                        <div class="avatar-option active" data-avatar="👦🏽">👦🏽</div>
+                        <div class="avatar-option" data-avatar="👧🏽">👧🏽</div>
+                        <div class="avatar-option" data-avatar="😎">😎</div>
+                        <div class="avatar-option" data-avatar="👽">👽</div>
+                        <div class="avatar-option" data-avatar="👻">👻</div>
+                        <div class="avatar-option" data-avatar="🦊">🦊</div>
+                        <div class="avatar-option" data-avatar="🌸">🌸</div>
+                        <div class="avatar-option" data-avatar="🏀">🏀</div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="myName" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Age (16 to 50)</label>
+                            <input type="number" id="myAge" min="16" max="50" required placeholder="e.g. 20">
+                        </div>
+                        <div class="form-group">
+                            <label>Instagram ID</label>
+                            <input type="text" id="myInsta" required placeholder="@handle">
+                        </div>
+                        <div class="form-group">
+                            <label>Gmail Address</label>
+                            <input type="email" id="myEmail" required placeholder="contact@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select id="myGender" required>
+                                <option value="" disabled selected>Select...</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Hobby/Vibe</label>
+                            <select id="myHobbies" required>
+                                <option value="" disabled selected>Select an interest...</option>
+                                <option value="Gym Freak / Fitness">🏋️ Gym Freak / Fitness</option>
+                                <option value="Music Lover / Concerts">🎧 Music Lover / Concerts</option>
+                                <option value="Adventurous / Trekking">🧗 Adventurous / Trekking</option>
+                                <option value="Gaming / E-Sports">🎮 Gaming / E-Sports</option>
+                                <option value="Art / Fashion / Photography">🎨 Art / Fashion / Photo</option>
+                                <option value="Bookworm / Quiet">📚 Bookworm / Cozy</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label>Sports you play</label>
+                            <input type="text" id="mySports" required placeholder="e.g. Basketball, Yoga">
+                        </div>
+                    </div>
+                    <button type="button" id="btnNext" class="btn-primary" style="margin-top: 2.5rem;">Next Step ➡️</button>
+                </div>
+
+                <div id="step2" style="display: none;">
+                    <h1 style="color: var(--neon-pink); text-align: center; margin-bottom: 2rem;">What are you looking for in a roommate?</h1>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Ideal Sleep Schedule</label>
+                            <select id="prefSleep" required>
+                                <option value="" disabled selected>Select...</option>
+                                <option value="Any">Any</option>
+                                <option value="Early Bird">Early Bird</option>
+                                <option value="Night Owl">Night Owl</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Cleanliness Standard</label>
+                            <select id="prefClean" required>
+                                <option value="" disabled selected>Select...</option>
+                                <option value="Any">Any</option>
+                                <option value="High">Very Neat</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Messy is fine</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Study Vibe</label>
+                            <select id="prefStudyType" required>
+                                <option value="" disabled selected>Select...</option>
+                                <option value="Any">Any</option>
+                                <option value="Quiet">Quiet Solo Study</option>
+                                <option value="Group">Group Study</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Social Energy</label>
+                            <select id="prefSocial" required>
+                                <option value="" disabled selected>Select...</option>
+                                <option value="Any">Any</option>
+                                <option value="Introvert">Introvert</option>
+                                <option value="Extrovert">Extrovert</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 3rem;">
+                        <button type="button" id="btnBack" style="background: rgba(0,0,0,0.5); border: 2px solid var(--neon-purple); color: white;">⬅️ Back</button>
+                        <button type="submit" class="btn-primary">Find Matches ✨</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div id="customAlertModal" class="modal-overlay" style="display: none;">
+        <div class="glass-card" style="text-align: center; width: 90%; max-width: 400px;">
+            <h2 style="color: var(--neon-pink); margin-bottom: 1rem;">Hold up! ✋</h2>
+            <p id="customAlertMsg" style="line-height: 1.6; font-size: 1.1rem;">Error message goes here</p>
+            <button class="btn-primary" onclick="closeCustomAlert()" style="margin-top: 1.5rem;">Got it!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

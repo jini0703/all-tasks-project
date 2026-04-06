@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Tasks: Counter & Color Changer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f8fafc;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #475569;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 10px 0 20px 0;
+            color: #1e293b;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .btn-decrease { background-color: #ef4444; color: white; }
+        .btn-reset { background-color: #94a3b8; color: white; }
+        .btn-increase { background-color: #22c55e; color: white; }
+        .btn-color { 
+            background-color: #3b82f6; 
+            color: white; 
+            width: 100%; 
+            font-size: 1.1rem; 
+            padding: 15px; 
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Counter App</h2>
+        <h1 id="counterDisplay">0</h1>
+        <button class="btn-decrease" id="decreaseBtn">Decrease</button>
+        <button class="btn-reset" id="resetBtn">Reset</button>
+        <button class="btn-increase" id="increaseBtn">Increase</button>
+    </div>
+
+    <div class="container">
+        <h2>Color Changer</h2>
+        <button class="btn-color" id="colorBtn">Change Background</button>
+    </div>
+
+    <script>
+        let count = 0;
+        const counterDisplay = document.getElementById('counterDisplay');
+
+        document.getElementById('increaseBtn').onclick = function() {
+            count++;
+            counterDisplay.textContent = count;
+        };
+
+        document.getElementById('decreaseBtn').onclick = function() {
+            count--;
+            counterDisplay.textContent = count;
+        };
+
+        document.getElementById('resetBtn').onclick = function() {
+            count = 0;
+            counterDisplay.textContent = count;
+        };
+
+        document.getElementById('colorBtn').onclick = function() {
+            const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+            document.body.style.backgroundColor = randomColor;
+        };
+    </script>
+</body>
+</html>

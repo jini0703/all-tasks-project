@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url(https://png.pngtree.com/thumb_back/fh260/background/20230706/pngtree-d-render-of-circuit-board-featuring-microcontrollers-and-firmware-for-cpu-image_3825577.jpg);
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    color: #FFFFFF;
+}
+p{
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+}

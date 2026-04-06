@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url(https://www.shutterstock.com/image-vector/urban-planning-green-sustainable-city-260nw-2439791671.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+    color: #FFFFFF;
+}
+
+p{
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+}

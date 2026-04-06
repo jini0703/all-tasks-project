@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 13 - Grade Calculator</title>
+    <link rel="stylesheet" href="task13.css">
+</head>
+<body>
+
+    <div class="grade-card">
+        <h2>Grade Calculator</h2>
+        <div class="input-group">
+            <input type="number" id="s1" placeholder="Subject 1 (0-100)">
+            <input type="number" id="s2" placeholder="Subject 2 (0-100)">
+            <input type="number" id="s3" placeholder="Subject 3 (0-100)">
+            <input type="number" id="s4" placeholder="Subject 4 (0-100)">
+            <input type="number" id="s5" placeholder="Subject 5 (0-100)">
+        </div>
+        
+        <button onclick="calculateGrade()">Calculate Results</button>
+
+        <div id="display-area">
+            <p id="average-text">Average: -</p>
+            <p id="grade-text">Grade: -</p>
+        </div>
+    </div>
+
+    <script src="task13.js"></script>
+</body>
+</html>
