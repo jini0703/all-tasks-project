@@ -70,6 +70,7 @@
             text-align: center;
             cursor: pointer;
             transition: 0.3s;
+            font-weight: bold;
         }
 
         .card:hover {
@@ -115,8 +116,9 @@
         <div class="card" onclick="openTask('./task16.1/task16.html')">Task 16</div>
         <div class="card" onclick="openTask('./task17/task17.html')">Task 17</div>
 
-        <!-- ✅ ASSIGNMENT 1 -->
+        <!-- 🔥 ASSIGNMENTS -->
         <div class="card" onclick="openTask('./ass1/index.html')">Assignment 1</div>
+        <div class="card" onclick="openTask('./ass2/index.html')">Assignment 2</div>
 
     </div>
 </div>
@@ -126,7 +128,6 @@ function openTask(path) {
     window.open(path, '_blank');
 }
 
-/* 🔥 PROJECT PATH */
 function openProject() {
     window.open('./group project/index.html', '_blank');
 }
