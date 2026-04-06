@@ -1,0 +1,523 @@
+/* ==========================================================
+   1. VARIABLES & RESET
+   ========================================================== */
+:root {
+    --neon-pink: #ff477e;
+    --neon-purple: #9d4edd;
+    --dark-bg: #10002b;
+    --glass-bg: rgba(36, 0, 70, 0.65);
+    --glass-border: rgba(255, 71, 126, 0.35);
+    --text-main: #ffffff;
+    --green: #00f5d4;
+    --red: #ff0a54;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #10002b, #240046, #3c096c, #10002b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ==========================================================
+   2. GLASSMORPHISM CARDS
+   ========================================================== */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    transition: transform 0.3s ease, background 0.5s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ==========================================================
+   3. NAVIGATION BAR & LOGO GRADIENT
+   ========================================================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+}
+
+/* ✨ The Beautiful Gradient Logo ✨ */
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 1px;
+}
+
+.nav-brand-text {
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(255, 71, 126, 0.2);
+    color: var(--neon-pink);
+}
+
+.nav-avatar {
+    width: 42px;
+    height: 42px;
+    padding: 0; /* ✨ THE FIX: Stops it from inheriting giant padding */
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--neon-pink);
+    border-radius: 50%; /* Forces a perfect circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    margin-left: 1rem;
+    box-sizing: border-box; /* Keeps the border inside the 42px width */
+}
+
+.nav-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--neon-pink);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.theme-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.2);
+}
+
+/* ==========================================================
+   4. FORMS & BUTTONS
+   ========================================================== */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--neon-pink);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid rgba(157, 78, 221, 0.4);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+    color: var(--text-main);
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: var(--neon-pink);
+}
+
+option {
+    background-color: var(--dark-bg);
+    color: white;
+}
+
+button {
+    padding: 14px 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+    width: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-google {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Password Meter */
+.pwd-meter-container {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.pwd-meter {
+    height: 100%;
+    width: 0%;
+    transition: 0.3s;
+}
+
+.pwd-weak {
+    width: 33%;
+    background: var(--red);
+}
+
+.pwd-medium {
+    width: 66%;
+    background: #ffbe0b;
+}
+
+.pwd-strong {
+    width: 100%;
+    background: var(--green);
+}
+
+.pwd-text {
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+/* Avatar Grid */
+.avatar-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.avatar-option {
+    font-size: 2.5rem;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.avatar-option.active {
+    border-color: var(--neon-pink);
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+/* ==========================================================
+   5. TINDER SWIPE UI
+   ========================================================== */
+.swipe-container {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.draggable-card {
+    position: relative;
+    width: 100%;
+    cursor: grab;
+    transition: transform 0.3s ease;
+}
+
+.draggable-card:active {
+    cursor: grabbing;
+    transition: none;
+}
+
+.swipe-actions {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.btn-arrow {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.btn-left {
+    color: var(--red);
+    border: 3px solid var(--red);
+}
+
+.btn-right {
+    color: var(--green);
+    border: 3px solid var(--green);
+}
+
+.swipe-left-anim {
+    animation: throwLeft 0.5s forwards !important;
+}
+
+.swipe-right-anim {
+    animation: throwRight 0.5s forwards !important;
+}
+
+.fade-in-anim {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes throwLeft {
+    to {
+        opacity: 0;
+        transform: translateX(-300px) rotate(-20deg);
+    }
+}
+
+@keyframes throwRight {
+    to {
+        opacity: 0;
+        transform: translateX(300px) rotate(20deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================================
+   6. DASHBOARD & MODALS
+   ========================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0;
+    width: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed var(--neon-purple);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+}
+
+/* ==========================================================
+   7. DASHBOARD TOOLBAR & TABS
+   ========================================================== */
+.dashboard-toolbar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px dashed var(--neon-purple);
+    flex-wrap: wrap;
+}
+
+.dashboard-toolbar input,
+.dashboard-toolbar select {
+    flex: 1;
+    min-width: 200px;
+    margin: 0;
+}
+
+.dash-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dash-tab {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--neon-purple);
+    color: var(--text-main);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.dash-tab:hover {
+    background: rgba(157, 78, 221, 0.4);
+}
+
+.dash-tab.active {
+    background: var(--neon-pink);
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px rgba(255, 71, 126, 0.5);
+}
+
+/* ==========================================================
+   8. LIGHT THEME OVERRIDE
+   ========================================================== */
+body.light-theme {
+    --dark-bg: #f5f6fa;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(157, 78, 221, 0.4);
+    --text-main: #2f3640;
+    background: linear-gradient(-45deg, #f5f6fa, #dcdde1, #f5f6fa, #dcdde1);
+}
+
+body.light-theme option {
+    background-color: #fff;
+    color: var(--text-main);
+}
+
+body.light-theme input,
+body.light-theme select,
+body.light-theme textarea {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(157, 78, 221, 0.5);
+}
+
+body.light-theme .dashboard-toolbar,
+body.light-theme .dash-tab,
+body.light-theme .contact-box,
+body.light-theme .avatar-option,
+body.light-theme .nav-avatar,
+body.light-theme .btn-arrow {
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--text-main);
+}
+
+body.light-theme div[style*="rgba(0,0,0,0.3)"],
+body.light-theme div[style*="rgba(0,0,0,0.4)"],
+body.light-theme div[style*="rgba(0,0,0,0.5)"] {
+    background: rgba(255, 255, 255, 0.65) !important;
+    color: var(--text-main) !important;
+}
+
+body.light-theme p[style*="color:var(--text-main)"] {
+    color: var(--text-main) !important;
+}

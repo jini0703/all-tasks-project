@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NestQuest</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav class="glass-card" style="padding: 1rem;">
+            <span class="nav-brand">🏠 <span class="nav-brand-text">NestQuest</span></span>
+            
+            <div class="nav-links" style="display: flex; align-items: center;">
+                <a href="index.html">Profile</a>
+                <a href="match.html">Swipe</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="about.html">About</a>
+                <a href="#" onclick="logout()">Logout</a>
+                <button id="themeToggle" class="theme-btn">🔮</button>
+                <a href="index.html" class="nav-avatar" id="navAvatar" title="Edit Profile">👤</a>
+            </div>
+        </nav>
+
+        <div class="dashboard-toolbar">
+            <input type="text" id="dashSearch" placeholder="🔍 Search by name, hobby, or sport...">
+            <select id="dashSort">
+                <option value="default">Sort: Default</option>
+                <option value="name-asc">Name (A → Z)</option>
+                <option value="name-desc">Name (Z → A)</option>
+                <option value="age-asc">Age (Young first)</option>
+                <option value="age-desc">Age (Old first)</option>
+                <option value="match-desc">Match % (High → Low)</option>
+                <option value="match-asc">Match % (Low → High)</option>
+            </select>
+            <select id="dashFilter">
+                <option value="all">Filter: All</option>
+                <option value="male">Male Only</option>
+                <option value="female">Female Only</option>
+            </select>
+        </div>
+
+        <div class="dash-tabs">
+            <button class="dash-tab active" data-tab="all" id="tabAll">All</button>
+            <button class="dash-tab" data-tab="accepted" id="tabAccepted">🤝 Connected</button>
+            <button class="dash-tab" data-tab="rejected" id="tabRejected">❌ Passed</button>
+            <button class="dash-tab" data-tab="suggested" id="tabSuggested">✨ Suggested</button>
+        </div>
+
+        <div id="dashboardGrid" class="grid"></div>
+
+    </div>
+
+    <div id="mailModal" class="modal-overlay" style="display: none;">
+        <div class="glass-card" style="width: 100%; max-width: 550px; position: relative;">
+            <button class="close-btn" onclick="closeMailModal()">✖</button>
+            <h2 style="color: var(--neon-pink); margin-bottom: 2rem;">✉️ Send an Email</h2>
+            
+            <form id="mailForm" onsubmit="sendMail(event)">
+                <div class="form-group">
+                    <label>To:</label>
+                    <input type="text" id="mailToName" readonly style="background: rgba(0,0,0,0.7); color: #aaa;">
+                    <input type="hidden" id="mailToEmail">
+                </div>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label>Subject:</label>
+                    <input type="text" id="mailSubject" required value="Hey! We matched on NestQuest 🏠">
+                </div>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label>Message:</label>
+                    <textarea id="mailBody" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="margin-top: 2rem;">📤 Send via Mail App</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

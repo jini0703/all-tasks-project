@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe - NestQuest</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav class="glass-card" style="padding: 1rem;">
+            <span class="nav-brand">🏠 <span class="nav-brand-text">NestQuest</span></span>
+            
+            <div class="nav-links" style="display: flex; align-items: center;">
+                <a href="index.html">Profile</a>
+                <a href="match.html" class="active">Swipe</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="about.html">About</a>
+                <a href="#" onclick="logout()">Logout</a>
+                
+                <button id="themeToggle" class="theme-btn">🔮</button>
+                <a href="index.html" class="nav-avatar" id="navAvatar" title="Edit Profile">👤</a>
+            </div>
+        </nav>
+
+        <div style="max-width: 360px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+            
+            <div style="text-align: center; width: 100%;">
+                <h1 style="text-shadow: 0 0 15px rgba(255,255,255,0.3); margin-top: 0; margin-bottom: 0.5rem;">
+                    Discover Matches
+                </h1>
+                
+                <p style="font-weight: bold; color: var(--text-main); margin-top: 0; margin-bottom: 2rem;">
+                    Click and drag the card, or use the buttons below.
+                </p>
+            </div>
+
+            <div class="swipe-container" id="singleCardContainer" style="width: 100%;">
+                </div>
+            
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
