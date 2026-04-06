@@ -1,0 +1,150 @@
+:root {
+    --bg-dark: #121212;
+    --panel-bg: rgba(30, 30, 30, 0.85);
+    --text-main: #ffffff;
+    --accent: #9d4edd;
+    --accent-hover: #7b2cbf;
+    --grid-border: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.app-container {
+    background-color: var(--panel-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    z-index: 1;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.control-group label {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+input[type="color"] {
+    width: 50px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: transparent;
+}
+
+input[type="number"] {
+    width: 80px;
+    height: 40px;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+button {
+    height: 40px;
+    padding: 0 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+}
+
+button.secondary {
+    background-color: transparent;
+    border: 1px solid var(--text-main);
+}
+
+button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+}
+
+#pixelCanvas {
+    display: grid;
+    background-color: var(--grid-border);
+    border: 2px solid var(--grid-border);
+    gap: 1px;
+}
+
+.pixel {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    cursor: crosshair;
+}
